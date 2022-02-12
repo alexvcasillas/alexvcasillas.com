@@ -57,7 +57,6 @@ export const {
     },
     fonts: {
       system: 'system-ui',
-      cormorant: "'Cormorant Infant', serif",
       marcellus: "'Marcellus', serif",
       mulish: "'Mulish', sans-serif",
     },
