@@ -20,7 +20,7 @@ export default class Document extends NextDocument {
             crossOrigin='true'
           />
           <link
-            href='https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300&display=optional'
+            href='https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@300&display=swap'
             rel='stylesheet'
           />
         </Head>
