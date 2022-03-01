@@ -12,7 +12,8 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      background: '#f1f5f9',
+      background: '#e2e8f0',
+      invertedBackground: 'hsl(220,12%,14%)',
 
       hiContrast: '#0f172a',
       loContrast: '#1e293b',
@@ -30,6 +31,16 @@ export const {
       purple400: 'hsl(252,75%,84%)',
       purple500: 'hsl(252,78%,60%)',
       purple600: 'hsl(252,80%,53%)',
+
+      amber100: '#fef3c7',
+      amber200: '#fde68a',
+      amber300: '#fcd34d',
+      amber400: '#fbbf24',
+      amber500: '#f59e0b',
+      amber600: '#d97706',
+      amber700: '#b45309',
+      amber800: '#92400e',
+      amber900: '#78350f',
     },
     space: {
       1: '5px',
@@ -137,12 +148,14 @@ export const globalStyles = globalCss({
   },
   body: {
     backgroundColor: '$background',
+    transition: 'background-color 0.3s ease-in-out',
   },
 });
 
 export const darkTheme = createTheme('dark-theme', {
   colors: {
     background: 'hsl(220,12%,14%)',
+    invertedBackground: '#e2e8f0',
 
     hiContrast: 'hsl(210,20%,98%)',
     loContrast: 'hsl(216,12%,84%)',

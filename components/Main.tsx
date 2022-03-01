@@ -1,71 +1,17 @@
-import { keyframes, styled } from '../stitches.config';
-import { ToptalLogo } from '../components/ToptalLogo';
 import { useTheme } from 'next-themes';
 
-const Text = styled('p', {
-  color: '$hiContrast',
-  fontSize: '1.2rem',
-  variants: {
-    heading: {
-      h1: {
-        fontSize: '2.8rem',
-      },
-      h2: {
-        fontSize: '1.8rem',
-      },
-    },
-    align: {
-      left: {
-        textAlign: 'left',
-      },
-      center: {
-        textAlign: 'center',
-      },
-      right: {
-        textAlign: 'right',
-      },
-    },
-    color: {
-      secondary: {
-        color: '$loContrast',
-      },
-    },
-    family: {
-      marcellus: {
-        fontFamily: 'Marcellus, serif',
-        fontWeight: 400,
-      },
-      cormorant: {
-        fontFamily: 'Cormorant, serif',
-      },
-    },
-  },
-  defaultVariants: {
-    align: 'center',
-  },
-});
+import { keyframes, styled } from '../stitches.config';
+
+import { ToptalLogo } from './ToptalLogo';
+import { Text } from './Text';
+import { Container } from './Container';
+import { VerticalSpacer } from './VerticalSpacer';
 
 const Link = styled('a', {
   textDecoration: 'none',
-  color: '$purple400',
-});
-
-const Container = styled('div', {
-  marginX: 'auto',
-  paddingX: '$3',
-
-  variants: {
-    size: {
-      1: {
-        maxWidth: '520px',
-      },
-      2: {
-        maxWidth: '900px',
-      },
-      3: {
-        maxWidth: '1024px',
-      },
-    },
+  color: '$amber500',
+  '&:hover': {
+    color: '$amber400',
   },
 });
 
@@ -77,14 +23,14 @@ const Grid = styled('div', {
   variants: {
     media: {
       desktop: {
-        gridTemplateColumns: 'auto auto auto',
+        gridTemplateColumns: '1fr 1fr 1fr',
         gridTemplateRows: 'auto',
         gridTemplateAreas: "'left center right'",
       },
       mobile: {
         gridTemplateAreas: "'center' 'left' 'right'",
         gridTemplateColumns: 'auto',
-        gridTemplateRows: "'auto auto auto'",
+        gridTemplateRows: "'1fr 1fr 1fr'",
       },
     },
   },
@@ -161,25 +107,6 @@ const Avatar = styled('div', {
   height: 512,
   background: 'url(alex-casillas.png) no-repeat center center',
   backgroundPosition: 'left center',
-});
-
-const VerticalSpacer = styled('div', {
-  variants: {
-    size: {
-      small: {
-        padding: '10px 0',
-      },
-      medium: {
-        padding: '15px 0',
-      },
-      large: {
-        padding: '20px 0',
-      },
-      xLarge: {
-        padding: '40px 0',
-      },
-    },
-  },
 });
 
 export const Main: React.FC<{}> = () => {
