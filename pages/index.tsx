@@ -24,7 +24,6 @@ export default function Home() {
       <Head>
         <title>Alex Casillas - Software Engineer @ Toptal</title>
       </Head>
-      <ThemeToggle />
       <Main />
     </Box>
   );
