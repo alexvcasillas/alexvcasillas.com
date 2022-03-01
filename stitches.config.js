@@ -12,10 +12,10 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      background: 'hsl(4,0%,96%)',
+      background: '#f1f5f9',
 
-      hiContrast: 'hsl(206,10%,5%)',
-      loContrast: 'white',
+      hiContrast: '#0f172a',
+      loContrast: '#1e293b',
 
       gray100: 'hsl(206,22%,99%)',
       gray200: 'hsl(206,12%,97%)',
