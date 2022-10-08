@@ -6,6 +6,7 @@ import { ToptalLogo } from './ToptalLogo';
 import { Text } from './Text';
 import { Container } from './Container';
 import { VerticalSpacer } from './VerticalSpacer';
+import { OTPfyLogo } from './OTPfyLogo';
 
 const Link = styled('a', {
   textDecoration: 'none',
@@ -251,7 +252,7 @@ export const Main: React.FC<{}> = () => {
               Years of Experience
             </Text>
             <Text heading='h1' align='left' color='secondary'>
-              6
+              {new Date().getFullYear() - 2015}
             </Text>
           </div>
           <VerticalSpacer size='large' />
@@ -269,6 +270,33 @@ export const Main: React.FC<{}> = () => {
                 />
               </Link>
             </Text>
+          </div>
+          <VerticalSpacer size='large' />
+          <div>
+            <Text heading='h2' align='left' family='marcellus'>
+              Creator of
+            </Text>
+            <VerticalSpacer size='small' />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                gap: 16,
+              }}
+            >
+              <Text heading='h1' align='left'>
+                <Link href='https://otpfy.com' target='_blank'>
+                  <OTPfyLogo />
+                </Link>
+              </Text>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <Text align='left' style={{ fontWeight: 'semibold' }}>
+                  OTPfy
+                </Text>
+                <Text align='left'>Securing Applications</Text>
+              </div>
+            </div>
           </div>
           <VerticalSpacer size='large' />
           <div>
