@@ -40,7 +40,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Projects - Alex Casillas</title>
         <meta
           name="description"
           content="Things that I've made trying to improve myself, for a living, or to give back to the open source world."
