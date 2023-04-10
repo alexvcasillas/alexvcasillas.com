@@ -4,11 +4,24 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
+import crateboxLogo from '../images/logos/cratebox-logo.svg'
+import otpfyLogo from '../images/logos/otpfy.png'
+import polyhedricomLogo from '../images/logos/polyhedricom.webp'
+import quickQRLogo from '../images/logos/quick-qr.png'
+import javascriptCookingBookIntroLogo from '../images/logos/javascript-cooking-book-intro-logo.jpg'
+
 const projects = [
   {
     name: 'Cratebox.io',
     description: '📦 A global, fast content delivery network for NPM',
     link: { href: 'https://cratebox.io', label: 'cratebox.io' },
+    logo: crateboxLogo,
+  },
+  {
+    name: 'Quick QR',
+    description: '📷 Quickly generate a QR code for any use that you need',
+    link: { href: 'https://quick-qr.app', label: 'quick-qr.app' },
+    logo: quickQRLogo,
   },
   {
     name: 'The JavaScript Cooking Book',
@@ -17,11 +30,20 @@ const projects = [
       href: 'https://www.javascriptcookingbook.com',
       label: 'javascriptcookingbook.com',
     },
+    logo: javascriptCookingBookIntroLogo,
+  },
+  {
+    name: 'Polyhedricom',
+    description:
+      '⭐ An engaging and challenging game where your skills will be put to test',
+    link: { href: 'https://www.polyhedricom.com', label: 'polyhedricom.com' },
+    logo: polyhedricomLogo,
   },
   {
     name: 'OTPfy',
     description: '🔑 2-Factor Authentication for your business in minutes',
     link: { href: 'https://www.otpfy.com', label: 'otpfy.com' },
+    logo: otpfyLogo,
   },
 ]
 
@@ -57,12 +79,13 @@ export default function Projects() {
           {projects.map((project) => (
             <Card as="li" key={project.name}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                {/* <Image
-                  src={project.logo}
-                  alt=""
-                  className="h-8 w-8"
-                  unoptimized
-                /> */}
+                {project.logo && (
+                  <Image
+                    src={project.logo}
+                    alt={project.description}
+                    className="h-8 w-8 rounded-full"
+                  />
+                )}
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
