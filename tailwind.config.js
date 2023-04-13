@@ -130,13 +130,16 @@ module.exports = {
             fontWeight: theme('fontWeight.semibold'),
             textDecoration: 'underline',
             textDecorationColor: 'var(--tw-prose-underline)',
-            transitionProperty: 'color, text-decoration-color',
+            transitionProperty:
+              'color, text-decoration-color, text-underline-offset',
             transitionDuration: theme('transitionDuration.150'),
             transitionTimingFunction: theme('transitionTimingFunction.in-out'),
+            textUnderlineOffset: '2px',
           },
           'a:hover': {
             color: 'var(--tw-prose-links-hover)',
             textDecorationColor: 'var(--tw-prose-underline-hover)',
+            textUnderlineOffset: '4px',
           },
           strong: {
             color: 'var(--tw-prose-bold)',
