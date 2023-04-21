@@ -6,7 +6,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/avatar.png'
+import avatarImage from '@/images/avatar.webp'
 
 function CloseIcon(props) {
   return (
@@ -242,6 +242,7 @@ function Avatar({ large = false, className, ...props }) {
           large ? 'h-16 w-16' : 'h-9 w-9'
         )}
         priority
+        placeholder="blur"
       />
     </Link>
   )
