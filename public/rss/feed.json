@@ -1,0 +1,45 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Alex Casillas",
+    "feed_url": "undefined/rss/feed.json",
+    "description": "Alex Casillas' Blog",
+    "icon": "undefined/favicon.ico",
+    "author": {
+        "name": "Alex Casillas"
+    },
+    "items": [
+        {
+            "id": "undefined/articles/help-supporting-open-source",
+            "content_html": "",
+            "url": "undefined/articles/help-supporting-open-source",
+            "title": "Help supporting Open Source ✨",
+            "summary": "I've maintained open-source for a long time and on my own, everything that I do is bootstrapped and self-funded, but as the open-source projects grow, so the expenses do.",
+            "date_modified": "2023-04-13T00:00:00.000Z",
+            "author": {
+                "name": "Alex Casillas"
+            }
+        },
+        {
+            "id": "undefined/articles/new-javascript-cooking-book-on-node",
+            "content_html": "",
+            "url": "undefined/articles/new-javascript-cooking-book-on-node",
+            "title": "A new \"JavaScript Cooking Book\" is coming your way!",
+            "summary": "I'm working on a new book! The next book in the series \"The JavaScript Cooking Book\", it's going to be all about NodeJS 💚",
+            "date_modified": "2023-04-10T00:00:00.000Z",
+            "author": {
+                "name": "Alex Casillas"
+            }
+        },
+        {
+            "id": "undefined/articles/introducing-cratebox",
+            "content_html": "",
+            "url": "undefined/articles/introducing-cratebox",
+            "title": "Introducing Cratebox.io: A global, fast content delivery network for NPM",
+            "summary": "When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.",
+            "date_modified": "2023-03-30T00:00:00.000Z",
+            "author": {
+                "name": "Alex Casillas"
+            }
+        }
+    ]
+}

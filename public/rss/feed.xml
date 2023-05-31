@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Alex Casillas</title>
+        <link>undefined</link>
+        <description>Alex Casillas' Blog</description>
+        <lastBuildDate>Wed, 31 May 2023 08:39:17 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <image>
+            <title>Alex Casillas</title>
+            <url>undefined/favicon.ico</url>
+            <link>undefined</link>
+        </image>
+        <copyright>All rights reserved 2023</copyright>
+        <item>
+            <title><![CDATA[Help supporting Open Source ✨]]></title>
+            <link>undefined/articles/help-supporting-open-source</link>
+            <guid>undefined/articles/help-supporting-open-source</guid>
+            <pubDate>Thu, 13 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[I've maintained open-source for a long time and on my own, everything that I do is bootstrapped and self-funded, but as the open-source projects grow, so the expenses do.]]></description>
+            <author>alexvcasillas@gmail.com (Alex Casillas)</author>
+        </item>
+        <item>
+            <title><![CDATA[A new "JavaScript Cooking Book" is coming your way!]]></title>
+            <link>undefined/articles/new-javascript-cooking-book-on-node</link>
+            <guid>undefined/articles/new-javascript-cooking-book-on-node</guid>
+            <pubDate>Mon, 10 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[I'm working on a new book! The next book in the series "The JavaScript Cooking Book", it's going to be all about NodeJS 💚]]></description>
+            <author>alexvcasillas@gmail.com (Alex Casillas)</author>
+        </item>
+        <item>
+            <title><![CDATA[Introducing Cratebox.io: A global, fast content delivery network for NPM]]></title>
+            <link>undefined/articles/introducing-cratebox</link>
+            <guid>undefined/articles/introducing-cratebox</guid>
+            <pubDate>Thu, 30 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.]]></description>
+            <author>alexvcasillas@gmail.com (Alex Casillas)</author>
+        </item>
+    </channel>
+</rss>
