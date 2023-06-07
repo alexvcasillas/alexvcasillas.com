@@ -1,0 +1,80 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Alex Casillas',
+  date: '2023-06-07',
+  title: 'Scheduling Functions ⏱️',
+  description:
+    "In this post, which is part of my next book, I'd like to talk about scheduling functions, and how it works in Node.js.",
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Hi, everyone 👋
+
+In this post, which is part of my next book, I'd like to talk about scheduling functions, and how it works in Node.js.
+
+## Scheduling Functions
+
+`setTimeout()` is a global function in both JavaScript (browser) and Node.js environments that allows you to schedule a single function call after a specified delay (in milliseconds). This method is useful for executing a specific piece of code after a delay or for creating non-blocking, asynchronous behavior in your applications.
+
+Here’s the syntax of the `setTimeout()` function:
+
+```js
+const timeoutId = setTimeout(callback, delay, [arg1, arg2, ...]);
+```
+
+- `callback`: The function to be executed after the specified delay.
+- `delay`: The number of milliseconds to wait before executing the callback function.
+- `arg1, arg2, ...`: Optional arguments to pass to the callback function.
+- `timeoutId`: A unique identifier for the scheduled timeout, which can be used later to cancel the timeout using `clearTimeout()`.
+
+Here’s a simple `setTimeout()` example. In this example, we'll use `setTimeout()` to print a message to the console after a 2-second delay.
+
+```js
+setTimeout(() => {
+  console.log('This message is displayed after a 2-second delay')
+}, 2000)
+```
+
+In the following example, we'll pass arguments to the callback function. The `setTimeout()` will add two numbers and log the result after a 3-second delay.
+
+```js
+function add(a, b) {
+  console.log(a + b)
+}
+
+setTimeout(add, 3000, 5, 7)
+```
+
+Here’s the output (after 3 seconds) that will be logged into the console:
+
+```
+12
+```
+
+In the following example we'll schedule a timeout, but then cancel it before the callback is executed.
+
+```js
+function myFunction() {
+  console.log('This message will not be displayed')
+}
+
+const timeoutId = setTimeout(myFunction, 5000)
+
+console.log('Canceling the scheduled timeout')
+
+clearTimeout(timeoutId)
+```
+
+Here’s the output that will be logged into the console:
+
+```
+Canceling the scheduled timeout
+```
+
+The `setTimeout()` function is a useful tool for scheduling tasks, adding delays, or creating asynchronous behavior in your JavaScript or Node.js applications. By understanding how it works and how to use it effectively, you can create more dynamic and responsive applications.
+
+---
+
+If you liked this introductory post about **The Event Loop** in NodeJS, or you would like to start learning JavaScript to bootstrap your career, you might be interested in my introductory book to JavaScript 👉 [The JavaScript Cooking Book: Learn JavaScript from the ground-up](https://www.amazon.com/-/es/Alex-Casillas/dp/B0BW2GGHHT)

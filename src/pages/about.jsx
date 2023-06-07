@@ -66,50 +66,55 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                Senior Software Engineer @ Toptal. Highly motivated, self-taught
-                technology developer with years of Software as a Service (SaaS)
-                developing experience. Expert in JavaScript. Exceptional at
-                React, React Native, Vue, Angular, SwiftUI, C#, and UX/UI
-                abilities/skills. I am constantly learning and adapting to new
-                technologies to improve my skills and self.
+                👋 Hey there, I'm a Senior Software Engineer at Toptal. I'm a
+                self-taught techie with a solid track record in Software as a
+                Service (SaaS) development. I've got a knack for JavaScript and
+                many other tools like React, React Native, Vue, Angular,
+                SwiftUI, and C#. Along with those, I've got a good handle on
+                UX/UI design. I love learning new technologies and keeping my
+                skills fresh and up-to-date.
               </p>
+
               <p>
-                A little about me: I'm an entrepreneur. I am always thinking
-                about new projects and developing them to improve my skills and
-                become a better programmer every day. I like to go to Global
-                Game Jams every year to challenge myself in game development and
-                meet new people. I work with Unity3D making my own games to
-                improve myself.
+                Outside the tech world, I'm an entrepreneur always brainstorming
+                and breathing life into new projects. It's one of the ways I
+                keep growing as a programmer. Unity3D is my go-to for making my
+                own games. It's all part of becoming a better version of myself,
+                one line of code at a time.
               </p>
+
               <p>
-                I love to play video games with my friends and hang out for some
-                drinks and fun. I like to go to the gym in my spare time and eat
-                healthy food (but I won't say no to a good pizza or a tasty
-                steak). I like to sing, I sing all the time. I have a passion
-                for my cats (got two and they're awesome!).
+                But hey, life isn't all about work, right? I love hanging out
+                with friends, playing video games, and occasionally going out
+                for drinks and a good laugh. I try to keep fit by hitting the
+                gym and eating healthy, but who can resist a good pizza or a
+                juicy steak? I'm a bit of a songbird 🎵 and a proud cat dad to
+                two amazing felines 😸😻
               </p>
+
               <p>
-                I have written a book about JavaScript to help everyone
-                bootstrap their careers into the Nodejs/Web Development world.
-                You can grab your printed copy on{' '}
+                To help others navigate the world of Node.js/Web Development, I
+                wrote a book all about JavaScript. You can check it out if you
+                like. Here's where you can get a printed copy 👉
                 <Link
                   href="https://www.amazon.com/Alex-Casillas/dp/B0BW2GGHHT"
                   className="inline-flex font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
                 >
                   Amazon
                 </Link>{' '}
-                or you can grab your digital copy on{' '}
+                and here for a digital one 👉
                 <Link
                   href="https://alexcasillas.gumroad.com/l/javascript-cooking-book"
                   className="inline-flex font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
                 >
                   Gumroad
                 </Link>
-                .
               </p>
+
               <p>
-                I had a wish/dream since I was a child and it's to travel around
-                the world and discover places that are only in my imagination!
+                One more thing about me: I've always dreamed of traveling around
+                the world, discovering places that, until now, have only lived
+                in my imagination. Let's see where this journey takes us!
               </p>
             </div>
           </div>
