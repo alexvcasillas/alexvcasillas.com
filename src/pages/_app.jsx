@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { Footer } from '@/components/Footer'
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps, router }) {
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
           <SpeedInsights />
+          <Analytics />
         </main>
         <Footer />
       </div>
