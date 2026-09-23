@@ -1,9 +1,46 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import AppBand from '../components/AppBand.astro';
+import RepoList from '../components/RepoList.astro';
+import PostList from '../components/PostList.astro';
+import apps from '../data/apps.json';
+import { getRepos } from '../lib/repos-build';
+import { publishedOnly, sortNewestFirst } from '../lib/posts';
 import { SITE } from '../lib/site';
+
+const sortedApps = [...apps].sort((a, b) => a.order - b.order);
+const repos = await getRepos();
+const posts = sortNewestFirst(publishedOnly(await getCollection('posts'))).slice(0, 3);
+const arrow = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>`;
 ---
 <BaseLayout title={SITE.name}>
-  <section class="wrap section">
-    <h1 class="h1">I make small, quiet software.</h1>
+  <Hero />
+
+  <section class="wrap apps-intro" aria-labelledby="apps">
+    <SectionHeading id="apps" title="Four little games for iPhone and iPad." intro="No timers, no ads, no accounts. They play offline and they are free. Morning to night, top to bottom." />
   </section>
+  {sortedApps.map((app, i) => <AppBand app={app} index={i} />)}
+
+  <div class="on-night">
+    <section class="wrap section" aria-labelledby="oss">
+      <SectionHeading id="oss" title="Open source" intro="Libraries I keep around, mostly for React and Node." />
+      <div class="list"><RepoList repos={repos} limit={6} /></div>
+      <a class="link-arrow" href="/open-source">Everything on GitHub <Fragment set:html={arrow} /></a>
+    </section>
+
+    <section class="wrap section writing" aria-labelledby="writing">
+      <SectionHeading id="writing" title="Writing" intro="Notes on JavaScript, Node, memory, SwiftUI, and whatever else caught my attention that week." />
+      <div class="list"><PostList posts={posts} /></div>
+      <a class="link-arrow" href="/writing">All posts <Fragment set:html={arrow} /></a>
+    </section>
+  </div>
 </BaseLayout>
+
+<style>
+  .apps-intro { padding-block: 40px 56px; }
+  .list { margin-block: 40px; }
+  .writing { padding-top: 0; }
+</style>
