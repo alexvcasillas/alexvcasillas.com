@@ -47,6 +47,7 @@
   --muted: var(--night-muted);
   --rule: var(--night-rule);
   --accent: var(--night-accent);
+  color-scheme: dark;
   background: var(--paper);
   color: var(--ink);
 }
@@ -56,6 +57,7 @@
   --muted: var(--night-muted);
   --rule: var(--night-rule);
   --accent: var(--night-accent);
+  color-scheme: dark;
   background: var(--paper);
   color: var(--ink);
 }

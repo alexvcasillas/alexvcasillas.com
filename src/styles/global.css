@@ -23,13 +23,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 ul[role="list"], ol[role="list"] { list-style: none; margin: 0; padding: 0; }
 h1, h2, h3, p { margin: 0; }
 
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .skip-link {
   position: absolute; left: var(--gutter); top: -100px;
   padding: 10px 14px; background: var(--accent); color: var(--paper); border-radius: 999px;
 }
 .skip-link:focus { top: 12px; z-index: 10; }
+.skip-link:hover { color: var(--paper); }
 
 .wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: var(--gutter); }
 @media (min-width: 1280px) { .wrap { max-width: none; padding-inline: 120px; } }
