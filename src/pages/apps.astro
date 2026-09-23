@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AppBand from '../components/AppBand.astro';
+import apps from '../data/apps.json';
+const sorted = [...apps].sort((a, b) => a.order - b.order);
+---
+<BaseLayout title="Apps" description="Four free games for iPhone and iPad. No timers, no ads, no accounts.">
+  <section class="wrap section-head intro">
+    <h1 class="h2">Four little games for iPhone and iPad.</h1>
+    <p class="muted">No timers, no ads, no accounts. They play offline and they are free. Morning to night, top to bottom.</p>
+  </section>
+  {sorted.map((app, i) => <AppBand app={app} index={i} />)}
+</BaseLayout>
+
+<style>
+  .intro { padding-block: 40px 56px; }
+</style>

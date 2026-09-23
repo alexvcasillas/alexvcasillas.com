@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "mellow-sudoku",
+    "name": "Mellow Sudoku",
+    "tagline": "Let the world wait a little.",
+    "blurb": "A calm Sudoku on warm paper. Three difficulties, pencil notes, undo, and a hint when you want one. Your puzzle waits exactly where you left it.",
+    "appStoreUrl": "https://apps.apple.com/us/app/mellow-sudoku/id6811995655",
+    "siteUrl": "https://mellow-sudoku.alexvcasillas.dev",
+    "icon": "/apps/mellow-sudoku/icon.png",
+    "screenshot": { "src": "/apps/mellow-sudoku/screenshot.jpg", "alt": "Mellow Sudoku, an easy puzzle in progress" },
+    "colors": { "bg": "#F7F5ED", "text": "#2F5D4A", "accent": "#2F5D4A", "frame": "#26332E" },
+    "order": 1
+  },
+  {
+    "slug": "pebble-paths",
+    "name": "Pebble Paths",
+    "tagline": "Find a path. Grow a little calm.",
+    "blurb": "Turn carved stones to carry water from the spring to the garden, and watch it bloom. Gardens from 4×4 to 6×6, unlimited hints, no clocks.",
+    "appStoreUrl": "https://apps.apple.com/us/app/pebble-paths/id6812444365",
+    "siteUrl": "https://pebble-paths.alexvcasillas.dev",
+    "icon": "/apps/pebble-paths/icon.png",
+    "screenshot": { "src": "/apps/pebble-paths/screenshot.jpg", "alt": "Pebble Paths, garden 13 with a water channel forming" },
+    "colors": { "bg": "#EFE7D6", "text": "#4A4436", "accent": "#4E8F97", "frame": "#3E3A30" },
+    "order": 2
+  },
+  {
+    "slug": "little-lanterns",
+    "name": "Little Lanterns",
+    "tagline": "Small puzzles. Softer evenings.",
+    "blurb": "Tap a lantern and its neighbours change with it. Light them all. Soft chimes, warm glow, and a gentle sway, wherever the evening finds you.",
+    "appStoreUrl": "https://apps.apple.com/us/app/little-lanterns/id6814389229",
+    "siteUrl": "https://little-lanterns.alexvcasillas.dev",
+    "icon": "/apps/little-lanterns/icon.png",
+    "screenshot": { "src": "/apps/little-lanterns/screenshot.jpg", "alt": "Little Lanterns title screen with one lantern glowing" },
+    "colors": { "bg": "#0E2029", "text": "#F3E9D6", "accent": "#E9B85C", "frame": "#1B2B33" },
+    "order": 3
+  },
+  {
+    "slug": "pocket-orbit",
+    "name": "Pocket Orbit",
+    "tagline": "A tiny moon. A universe of possibility.",
+    "blurb": "Your moon circles a planet. Tap to launch, catch the next glowing orbit, and keep the journey going. Take as many laps as you need.",
+    "appStoreUrl": "https://apps.apple.com/us/app/pocket-orbit-tiny-journeys/id6814419406",
+    "siteUrl": "https://pocket-orbit.alexvcasillas.dev",
+    "icon": "/apps/pocket-orbit/icon.png",
+    "screenshot": { "src": "/apps/pocket-orbit/screenshot.jpg", "alt": "Pocket Orbit, a moon circling a planet before launch" },
+    "colors": { "bg": "#070C19", "text": "#EEE6F2", "accent": "#F2B08A", "frame": "#161B2C" },
+    "order": 4
+  }
+]
