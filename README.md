@@ -19,15 +19,21 @@ Add `src/content/posts/<slug>.md`:
     draft: false
     ---
 
-Set `draft: true` to keep it out of the build, the feed, and the sitemap. Reading time is computed from the body.
+Set `draft: true` to keep it out of the build, the feed, and the sitemap. Reading time is computed from the body. Tags must be lowercase letters, digits and hyphens (`react-native`, not `React Native`); anything else fails the build.
 
 ## Edit content
 
 - Apps: `src/data/apps.json` and the assets under `public/apps/<slug>/`.
 - Repos: `src/data/repos.json` (order matters; `blurb` overrides the GitHub description). Stars are fetched at build and cached in `src/data/repos.cache.json`, which is committed so offline builds still work. Set `GITHUB_TOKEN` in the build environment to raise the API rate limit.
-- About page "Right now": `src/data/now.json`.
+- About page "Right now": `src/data/now.json`. Items whose `value` starts with `[` are placeholders and are hidden; the section is hidden until at least one item is filled in.
 - Footer and Elsewhere links: `src/data/links.json`.
 - Hero and bio copy live in `src/components/Hero.astro` and `src/pages/about.astro`.
+
+Run builds from the repo root. A successful online build may update `src/data/repos.cache.json` with fresh star counts; commit it.
+
+## Deploy
+
+`pnpm build` outputs static files to `dist/`. Pages are written as `about.html`-style files and URLs have no trailing slashes, so any static host that serves `/about` from `about.html` works.
 
 ## Check
 

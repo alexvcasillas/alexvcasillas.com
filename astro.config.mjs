@@ -6,6 +6,7 @@ export default defineConfig({
   site: 'https://alexvcasillas.com',
   output: 'static',
   trailingSlash: 'never',
+  build: { format: 'file' },
   integrations: [sitemap()],
   markdown: {
     shikiConfig: { theme: paperNight, wrap: false },

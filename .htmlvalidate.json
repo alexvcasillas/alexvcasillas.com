@@ -3,9 +3,7 @@
   "rules": {
     "no-inline-style": "off",
     "no-trailing-whitespace": "off",
-    "long-title": "off",
     "require-sri": "off",
-    "wcag/h30": "off",
     "no-redundant-role": ["error", { "exclude": ["list"] }]
   }
 }

@@ -23,7 +23,7 @@ function bare(entry: RepoEntry): Repo {
 async function fetchOne(entry: RepoEntry, deps: LoadDeps): Promise<Repo> {
   const headers: Record<string, string> = { Accept: 'application/vnd.github+json', 'User-Agent': 'alexvcasillas.com-build' };
   if (deps.token) headers.Authorization = `Bearer ${deps.token}`;
-  const res = await deps.fetchFn(`https://api.github.com/repos/${entry.repo}`, { headers });
+  const res = await deps.fetchFn(`https://api.github.com/repos/${entry.repo}`, { headers, signal: AbortSignal.timeout(8000) });
   if (!res.ok) throw new Error(`GitHub responded ${res.status} for ${entry.repo}`);
   const data = (await res.json()) as GitHubRepo;
   return {
