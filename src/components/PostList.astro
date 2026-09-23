@@ -1,0 +1,26 @@
+---
+import { formatDate } from '../lib/posts';
+interface Props { posts: Array<{ id: string; data: { title: string; description: string; date: Date } }> }
+const { posts } = Astro.props;
+---
+<ul role="list" class="hairline-list posts">
+  {posts.map((post) => (
+    <li class="row">
+      <time class="muted" datetime={post.data.date.toISOString().slice(0, 10)}>{formatDate(post.data.date)}</time>
+      <a href={`/writing/${post.id}`} class="entry">
+        <span class="serif title">{post.data.title}</span>
+        <span class="muted">{post.data.description}</span>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .row { display: grid; gap: 8px; padding-block: 24px; }
+  .entry { display: flex; flex-direction: column; gap: 8px; }
+  .title { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15; letter-spacing: -0.01em; }
+  time { font-size: 15px; }
+  @media (min-width: 700px) {
+    .row { grid-template-columns: 200px 1fr; gap: 40px; align-items: baseline; padding-block: 28px; }
+  }
+</style>
