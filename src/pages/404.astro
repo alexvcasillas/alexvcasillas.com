@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Not found" description="That page is not here.">
+  <section class="wrap section notfound">
+    <h1 class="h2">That page is not here.</h1>
+    <p class="muted">It may have moved when the site was rebuilt.</p>
+    <a class="pill" href="/">Back to the start</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; min-height: 50vh; }
+</style>
