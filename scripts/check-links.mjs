@@ -12,7 +12,7 @@ async function walk(dir) {
 }
 await walk(root);
 
-async function exists(p) { try { await stat(p); return true; } catch { return false; } }
+async function exists(p) { try { return (await stat(p)).isFile(); } catch { return false; } }
 async function resolvable(href) {
   const clean = href.split('#')[0].split('?')[0];
   if (!clean) return true;

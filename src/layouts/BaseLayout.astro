@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Seo from '../components/Seo.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import newsreaderUrl from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
+import instrumentUrl from '@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2?url';
 interface Props { title: string; description?: string; ogImage?: string; class?: string }
 const { title, description, ogImage, class: className } = Astro.props;
 ---
@@ -22,6 +24,8 @@ const { title, description, ogImage, class: className } = Astro.props;
         } catch (e) {}
       })();
     </script>
+    <link rel="preload" href={newsreaderUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={instrumentUrl} as="font" type="font/woff2" crossorigin />
     <Seo title={title} description={description} ogImage={ogImage} />
   </head>
   <body>

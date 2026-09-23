@@ -1,5 +1,5 @@
-@import '@fontsource-variable/newsreader/standard.css';
-@import '@fontsource-variable/newsreader/standard-italic.css';
+@import '@fontsource-variable/newsreader/wght.css';
+@import '@fontsource-variable/newsreader/wght-italic.css';
 @import '@fontsource-variable/instrument-sans/wght.css';
 @import '@fontsource-variable/jetbrains-mono/wght.css';
 @import './tokens.css';
@@ -35,7 +35,7 @@ h1, h2, h3, p { margin: 0; }
 .wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: var(--gutter); }
 @media (min-width: 1280px) { .wrap { max-width: none; padding-inline: 120px; } }
 
-.serif { font-family: var(--font-display); font-optical-sizing: auto; }
+.serif { font-family: var(--font-display); }
 .h1 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.0; font-size: clamp(44px, 7vw, 96px); }
 .h2 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.015em; line-height: 1.1; font-size: clamp(30px, 3.5vw, 44px); }
 .h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.0; font-size: clamp(36px, 4vw, 52px); }
