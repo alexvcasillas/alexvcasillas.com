@@ -30,7 +30,7 @@ Nothing from the old site carries over: no old articles, no legacy products, no 
 - **@astrojs/rss** for the feed, **@astrojs/sitemap** for the sitemap.
 - Plain CSS with custom properties. No Tailwind. Fonts self-hosted via the `@fontsource-variable` packages (bundled woff2, two above-the-fold files preloaded) rather than loaded from Google, so the site works offline and has no third-party requests.
 - Package manager: pnpm (matches the existing lockfile convention).
-- Hosting: any static host. The site builds to `dist/`. Deployment config is out of scope for this spec beyond producing a static build.
+- Hosting: any static host. The site builds to `dist/` with `build.format: 'file'` (`about.html`, no trailing slashes); canonical URLs are normalized to the extensionless form. Deployment config is out of scope for this spec beyond producing a static build.
 
 ## 4. Site map
 
@@ -132,7 +132,8 @@ Astro components, one file each, no client JS except the theme toggle:
 - `AppBand` — one app, props from `apps.json`; alternates screenshot side by index.
 - `RepoList` — takes the loaded repo array and a `limit`.
 - `PostList` — date column plus title and description.
-- `Prose` — wrapper styles for rendered markdown (headings, links, code, blockquote, images, tables).
+- `prose.css` — global styles applied to a `div.prose` wrapper around rendered markdown (headings, links, code, blockquote, images, tables). Astro scoped styles cannot reach rendered markdown, so this is a stylesheet rather than a component.
+- `TagList` — tag pills linking to `/writing/tag/<tag>`, used by the writing index and post page.
 - `Seo` — title, description, canonical, Open Graph, Twitter card. Home OG image is a static PNG; posts fall back to it (per-post OG generation is out of scope).
 
 ## 8. Data flow
