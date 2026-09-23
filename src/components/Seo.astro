@@ -1,9 +1,10 @@
 ---
 import { SITE } from '../lib/site';
+import { cleanPath } from '../lib/paths';
 interface Props { title: string; description?: string; ogImage?: string }
 const { title, description = SITE.description, ogImage = '/og.png' } = Astro.props;
 const fullTitle = title === SITE.name ? title : `${title}, ${SITE.name}`;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(cleanPath(Astro.url.pathname), Astro.site);
 const image = new URL(ogImage, Astro.site);
 ---
 <title>{fullTitle}</title>
