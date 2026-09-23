@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import links from '../data/links.json';
+import now from '../data/now.json';
+---
+<BaseLayout title="About" description="Alex Casillas, software engineer in Córdoba, Spain. Small, quiet software for the web and for your pocket.">
+  <div class="wrap about">
+    <div class="copy">
+      <h1 class="h1 about-h1">
+        Hi, I'm Alex.<br />
+        <span class="italic-light accent">I live in Córdoba, Spain.</span>
+      </h1>
+      <p>I'm a software engineer at Tiptap, where I work on the editor a lot of the web writes in. I'm self-taught, and most of what I know came from shipping things: SaaS products, React and React Native apps, a few Unity games, and lately small iOS games built in SwiftUI.</p>
+      <p>Evenings go to open source and to the four little games on this site. I like software that stays out of the way. No timers, no ads, no accounts, nothing that asks for more of your attention than it needs.</p>
+      <p>Away from the keyboard I sing more than I should, try to keep up with the gym, lose most of that ground to pizza, and share a home with two cats who review all my code.</p>
+      <p>I've always wanted to see more of the world. This site is where I'll write about what I'm building and, now and then, about where I've been.</p>
+
+      <section class="now" aria-labelledby="now">
+        <h2 id="now" class="serif">Right now</h2>
+        <dl>
+          {now.map((item) => (
+            <div class="pair"><dt class="muted">{item.label}</dt><dd>{item.value}</dd></div>
+          ))}
+        </dl>
+      </section>
+    </div>
+
+    <aside class="side">
+      <img src="/images/portrait.jpg" alt="Alex smiling in front of an iron railing, with hills and farmland behind" width="400" height="480" loading="lazy" />
+      <section aria-labelledby="elsewhere">
+        <h2 id="elsewhere" class="serif">Elsewhere</h2>
+        <ul role="list" class="hairline-list">
+          {links.map((l) => (
+            <li><a href={l.href}><span>{l.label}</span><span class="muted note">{l.note}</span></a></li>
+          ))}
+        </ul>
+      </section>
+    </aside>
+  </div>
+</BaseLayout>
+
+<style>
+  .about { display: grid; gap: 56px; padding-block: 48px 120px; }
+  .about-h1 { font-size: clamp(44px, 6vw, 80px); margin-bottom: 8px; }
+  .accent { color: var(--accent); }
+  .copy { display: flex; flex-direction: column; gap: 28px; max-width: 640px; font-size: 19px; line-height: 1.65; }
+  .now { margin-top: 24px; border-top: 1px solid var(--rule); }
+  .now h2 { margin: 28px 0 12px; font-size: 32px; font-weight: 400; letter-spacing: -0.015em; }
+  dl { margin: 0; display: grid; gap: 12px; font-size: 17px; }
+  .pair { display: grid; grid-template-columns: 140px 1fr; gap: 24px; }
+  dd { margin: 0; }
+  .side { display: flex; flex-direction: column; gap: 40px; }
+  .side img { width: min(400px, 100%); height: auto; aspect-ratio: 5 / 6; object-fit: cover; border-radius: 28px; transform: rotate(2deg); box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+  .side h2 { font-size: 26px; font-weight: 400; margin-bottom: 12px; }
+  .side li a { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 14px; font-weight: 500; }
+  .note { font-weight: 400; font-size: 15px; }
+  @media (min-width: 1000px) {
+    .about { grid-template-columns: minmax(0, 640px) minmax(0, 420px); justify-content: space-between; align-items: start; gap: clamp(48px, 6vw, 120px); padding-block: 96px 120px; }
+    .side { padding-top: 16px; }
+  }
+</style>
