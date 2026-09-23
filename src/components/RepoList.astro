@@ -13,7 +13,7 @@ const fmt = new Intl.NumberFormat('en-US');
         {repo.description && <span class="muted desc">{repo.description}</span>}
       </a>
       {repo.stars !== null && (
-        <span class="stars" aria-label={`${fmt.format(repo.stars)} ${repo.stars === 1 ? 'star' : 'stars'}`}>
+        <span class="stars" role="img" aria-label={`${fmt.format(repo.stars)} ${repo.stars === 1 ? 'star' : 'stars'}`}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 3 6.6 7 .8-5.2 4.8L18.2 22 12 18.4 5.8 22l1.4-7.8L2 9.4l7-.8z"/></svg>
           {fmt.format(repo.stars)}
         </span>
