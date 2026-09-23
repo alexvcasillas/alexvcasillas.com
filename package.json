@@ -1,39 +1,32 @@
 {
-  "name": "alexvcasillas",
-  "version": "1.0.0",
+  "name": "alexvcasillas.com",
+  "version": "2.0.0",
   "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "packageManager": "pnpm@11.5.2",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
+    "og": "node scripts/og.mjs",
+    "validate": "html-validate \"dist/**/*.html\" && node scripts/check-links.mjs"
   },
-  "browserslist": "defaults, not ie <= 11",
   "dependencies": {
-    "@headlessui/react": "^1.7.13",
-    "@mapbox/rehype-prism": "^0.8.0",
-    "@mdx-js/loader": "^2.1.5",
-    "@mdx-js/react": "^2.1.5",
-    "@next/mdx": "^13.0.2",
-    "@tailwindcss/typography": "^0.5.4",
-    "@vercel/analytics": "^0.1.11",
-    "@vercel/speed-insights": "^1.0.10",
-    "autoprefixer": "^10.4.12",
-    "clsx": "^1.2.1",
-    "fast-glob": "^3.2.11",
-    "feed": "^4.2.2",
-    "focus-visible": "^5.2.0",
-    "next": "13.3.0",
-    "postcss-focus-visible": "^6.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "remark-gfm": "^3.0.1",
-    "tailwindcss": "^3.3.0"
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/instrument-sans": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "astro": "^7.3.4"
   },
   "devDependencies": {
-    "eslint": "8.26.0",
-    "eslint-config-next": "13.0.2",
-    "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.6"
+    "@astrojs/check": "^0.9.10",
+    "html-validate": "^11.16.0",
+    "sharp": "^0.34.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.1"
   }
 }
