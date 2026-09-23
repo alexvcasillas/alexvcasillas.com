@@ -41,7 +41,7 @@ Nothing from the old site carries over: no old articles, no legacy products, no 
 | `/open-source` | Open source | full curated repo list |
 | `/writing` | Writing index | all posts, newest first, optional tag filter by URL (`/writing/tag/node`) |
 | `/writing/[slug]` | Post | rendered markdown |
-| `/about` | About | short bio, photo optional, links |
+| `/about` | About | headline, four-paragraph bio, portrait, "Right now" list, "Elsewhere" links |
 | `/rss.xml` | RSS feed | all posts |
 | `/sitemap-index.xml` | Sitemap | generated |
 | `/404` | Not found | one line and a link home |
@@ -99,7 +99,11 @@ Rules: `title`, `description`, `date` required; `tags` default `[]`; `draft` def
 
 One entry per app: `slug`, `name`, `tagline`, `blurb`, `appStoreUrl`, `siteUrl`, `icon` (path in `public/apps/<slug>/icon.png`), `screenshot` (path plus alt text), `colors` (`bg`, `text`, `accent`), `order`. Icons and one App Store screenshot per app are committed to the repo; they were already pulled from the marketing sites and App Store during design.
 
-### 6.3 Repos — `src/data/repos.json`
+### 6.3 About — `src/data/now.json`
+
+The About page's "Right now" block (Building, Reading, Listening to) reads from a tiny JSON file so it can be updated without touching markup. The bio paragraphs and the portrait (`public/images/portrait.jpg`, the existing 960×1280 photo) live in the page itself. The "Elsewhere" list reuses the footer links.
+
+### 6.4 Repos — `src/data/repos.json`
 
 Curated list of GitHub repo names, in display order, with an optional hand-written `blurb` override:
 
