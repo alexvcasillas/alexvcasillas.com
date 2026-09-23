@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostList from '../../../components/PostList.astro';
+import { publishedOnly, sortNewestFirst, allTags } from '../../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = publishedOnly(await getCollection('posts'));
+  return allTags(posts).map((tag) => ({
+    params: { tag },
+    props: { posts: sortNewestFirst(posts.filter((p) => p.data.tags.includes(tag))) },
+  }));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+<BaseLayout title={`Writing about ${tag}`} description={`Posts tagged ${tag}.`}>
+  <section class="wrap section">
+    <div class="section-head">
+      <h1 class="h2">Writing about {tag}</h1>
+      <p class="muted"><a href="/writing">All posts</a></p>
+    </div>
+    <div class="list"><PostList posts={posts} /></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .list { margin-top: 40px; }
+  .section-head a { text-decoration: underline; text-underline-offset: 3px; }
+</style>
