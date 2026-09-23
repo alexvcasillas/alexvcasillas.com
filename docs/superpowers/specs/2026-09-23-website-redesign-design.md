@@ -28,7 +28,7 @@ Nothing from the old site carries over: no old articles, no legacy products, no 
 - **Data files** for apps (`src/data/apps.json`) and curated repos (`src/data/repos.json`).
 - **Shiki** (Astro's built-in) for build-time syntax highlighting with a custom theme using site colors.
 - **@astrojs/rss** for the feed, **@astrojs/sitemap** for the sitemap.
-- Plain CSS with custom properties. No Tailwind. Fonts self-hosted (woff2 in `public/fonts`) rather than loaded from Google, so the site works offline and has no third-party requests.
+- Plain CSS with custom properties. No Tailwind. Fonts self-hosted via the `@fontsource-variable` packages (bundled woff2, two above-the-fold files preloaded) rather than loaded from Google, so the site works offline and has no third-party requests.
 - Package manager: pnpm (matches the existing lockfile convention).
 - Hosting: any static host. The site builds to `dist/`. Deployment config is out of scope for this spec beyond producing a static build.
 
@@ -66,11 +66,11 @@ The approved canvas is the source of truth for layout and spacing. Summary:
 | `--night` (fixed dark sections) | `#0C1B24` | `#0C1B24` |
 | `--night-deep` (footer) | `#070C19` | `#070C19` |
 
-App band grounds are fixed per app and live in `apps.json`: Mellow `#F7F5ED`/text `#2F5D4A`, Pebble `#EFE7D6`/text `#4A4436`/accent `#4E8F97`, Lanterns `#0E2029`/text `#F3E9D6`/accent `#E9B85C`, Orbit `#070C19`/text `#EEE6F2`/accent `#F2B08A`.
+App band grounds are fixed per app and live in `apps.json` as `colors.{bg,text,muted,accent,frame}`: Mellow `#F7F5ED`/text `#2F5D4A`/muted `#46605A`, Pebble `#EFE7D6`/text `#4A4436`/muted `#5E5848`/accent `#35666F` (darkened from the app's `#4E8F97` to reach 4.5:1), Lanterns `#0E2029`/text `#F3E9D6`/muted `#C9C0AE`/accent `#E9B85C`, Orbit `#070C19`/text `#EEE6F2`/muted `#B9B3C4`/accent `#F2B08A`. Every band's text, muted, and accent colors meet 4.5:1 on their ground.
 
 **Type**
 
-- Newsreader (variable, optical sizing) for headlines, taglines, pull quotes, post titles. Italic light weight for taglines and the hero's second line.
+- Newsreader (variable, weight axis only; the optical-size build was dropped for a 56% smaller download) for headlines, taglines, pull quotes, post titles. Italic light weight for taglines and the hero's second line.
 - Instrument Sans for body, navigation, metadata, buttons. Sentence case everywhere. No tracked-out uppercase labels, no numbered markers.
 - JetBrains Mono for code blocks only.
 - Post body measure: 720px max, 19px/1.65. Headline scale from the canvas: 96 hero, 64 post title, 52 app name, 44 section heading, 32 post list title, 26 repo name.
