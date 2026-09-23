@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { publishedOnly, formatDate } from '../../lib/posts';
 import { readingTime } from '../../lib/reading-time';
+import TagList from '../../components/TagList.astro';
 import '../../styles/prose.css';
 
 export async function getStaticPaths() {
@@ -16,34 +17,30 @@ const minutes = readingTime(post.body ?? '');
 ---
 <BaseLayout title={post.data.title} description={post.data.description}>
   <article class="wrap article">
-    <aside class="meta muted">
-      <time datetime={post.data.date.toISOString().slice(0, 10)}>{formatDate(post.data.date)}</time>
-      <span>{minutes} minute read</span>
-      {post.data.tags.length > 0 && (
-        <ul role="list" class="tags">
-          {post.data.tags.map((tag) => <li><a class="tag" href={`/writing/tag/${tag}`}>{tag}</a></li>)}
-        </ul>
-      )}
-    </aside>
     <div class="body">
       <h1 class="title serif">{post.data.title}</h1>
       <p class="serif italic-light standfirst">{post.data.description}</p>
       <div class="prose"><Content /></div>
     </div>
+    <aside class="meta muted">
+      <time datetime={post.data.date.toISOString().slice(0, 10)}>{formatDate(post.data.date)}</time>
+      <span>{minutes} minute read</span>
+      {post.data.tags.length > 0 && (
+        <div class="tags-wrap"><TagList tags={post.data.tags} size="sm" /></div>
+      )}
+    </aside>
   </article>
 </BaseLayout>
 
 <style>
   .article { display: grid; gap: 32px; padding-block: 48px 120px; }
   .meta { display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-  .tag { display: inline-block; padding: 5px 12px; border: 1px solid var(--rule); border-radius: 999px; font-size: 13px; }
-  .tag:hover { color: var(--accent); border-color: var(--accent); }
+  .tags-wrap { margin-top: 8px; }
   .body { max-width: var(--measure); }
   .title { font-size: clamp(40px, 5vw, 64px); line-height: 1.02; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 20px; }
   .standfirst { font-size: clamp(22px, 2.2vw, 26px); line-height: 1.35; color: var(--accent); margin-bottom: 40px; }
   @media (min-width: 1000px) {
-    .article { grid-template-columns: 200px var(--measure); gap: 80px; justify-content: center; padding-block: 96px 120px; }
-    .meta { padding-top: 14px; }
+    .article { grid-template-columns: 200px minmax(0, var(--measure)); gap: 80px; justify-content: center; padding-block: 96px 120px; }
+    .meta { order: -1; padding-top: 14px; }
   }
 </style>

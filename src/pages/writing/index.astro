@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostList from '../../components/PostList.astro';
+import TagList from '../../components/TagList.astro';
 import { publishedOnly, sortNewestFirst, allTags } from '../../lib/posts';
 
 const posts = sortNewestFirst(publishedOnly(await getCollection('posts')));
@@ -14,16 +15,12 @@ const tags = allTags(posts);
       <p class="muted">Notes on JavaScript, Node, memory, SwiftUI, and whatever else caught my attention that week.</p>
     </div>
     {tags.length > 0 && (
-      <ul role="list" class="tags">
-        {tags.map((tag) => <li><a class="tag" href={`/writing/tag/${tag}`}>{tag}</a></li>)}
-      </ul>
+      <div class="tags-wrap"><TagList tags={tags} /></div>
     )}
     <PostList posts={posts} />
   </section>
 </BaseLayout>
 
 <style>
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 32px 40px; }
-  .tag { display: inline-block; padding: 6px 14px; border: 1px solid var(--rule); border-radius: 999px; font-size: 14px; color: var(--muted); }
-  .tag:hover { color: var(--accent); border-color: var(--accent); }
+  .tags-wrap { margin-block: 32px 40px; }
 </style>

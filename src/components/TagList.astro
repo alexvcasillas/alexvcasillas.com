@@ -1,0 +1,14 @@
+---
+interface Props { tags: string[]; size?: 'md' | 'sm' }
+const { tags, size = 'md' } = Astro.props;
+---
+<ul role="list" class:list={['tags', size]}>
+  {tags.map((tag) => <li><a class="tag" href={`/writing/tag/${encodeURIComponent(tag)}`}>{tag}</a></li>)}
+</ul>
+
+<style>
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { display: inline-block; padding: 6px 14px; border: 1px solid var(--rule); border-radius: 999px; font-size: 14px; color: var(--muted); }
+  .sm .tag { padding: 5px 12px; font-size: 13px; }
+  .tag:hover { color: var(--accent); border-color: var(--accent); }
+</style>
