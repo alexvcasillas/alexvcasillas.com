@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+import Seo from '../components/Seo.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+interface Props { title: string; description?: string; ogImage?: string; class?: string }
+const { title, description, ogImage, class: className } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Casillas, writing" href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
+    <Seo title={title} description={description} ogImage={ogImage} />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <Nav />
+    <main id="content" class={className}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

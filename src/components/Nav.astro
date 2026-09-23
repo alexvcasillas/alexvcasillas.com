@@ -1,0 +1,35 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { SITE } from '../lib/site';
+const items = [
+  { href: '/apps', label: 'Apps' },
+  { href: '/open-source', label: 'Open source' },
+  { href: '/writing', label: 'Writing' },
+  { href: '/about', label: 'About' },
+];
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || path.startsWith(href + '/');
+---
+<header class="nav wrap">
+  <a href="/" class="serif brand">{SITE.name}</a>
+  <nav aria-label="Main">
+    <ul role="list">
+      {items.map((item) => (
+        <li><a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+  <ThemeToggle />
+</header>
+
+<style>
+  .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 96px; padding-block: 20px; }
+  .brand { font-size: 24px; font-weight: 500; letter-spacing: -0.01em; }
+  ul { display: flex; gap: clamp(16px, 3vw, 40px); font-weight: 500; font-size: 16px; }
+  a[aria-current="page"] { color: var(--accent); border-bottom: 1.5px solid var(--accent); padding-bottom: 2px; }
+  @media (max-width: 599px) {
+    .nav { flex-wrap: wrap; min-height: 64px; }
+    nav { order: 3; width: 100%; }
+    ul { justify-content: space-between; font-size: 15px; }
+  }
+</style>

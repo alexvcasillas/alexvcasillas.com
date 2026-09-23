@@ -1,0 +1,23 @@
+---
+import links from '../data/links.json';
+import { SITE } from '../lib/site';
+---
+<footer class="footer on-night-deep">
+  <div class="wrap inner">
+    <div>
+      <p class="serif name">{SITE.name}</p>
+      <p class="muted">Córdoba, Spain</p>
+    </div>
+    <ul role="list" class="links">
+      {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .footer { border-top: 1px solid var(--rule); padding-block: 56px 64px; }
+  .inner { display: flex; flex-direction: column; gap: 28px; }
+  .name { font-size: 30px; line-height: 1.2; margin-bottom: 8px; }
+  .links { display: flex; flex-wrap: wrap; gap: 24px 32px; font-size: 15px; color: var(--muted); }
+  @media (min-width: 700px) { .inner { flex-direction: row; justify-content: space-between; align-items: flex-end; } }
+</style>

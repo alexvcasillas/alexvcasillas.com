@@ -1,0 +1,61 @@
+:root {
+  --paper: #F6F2E8;
+  --ink: #1F2A26;
+  --muted: #4A544F;
+  --rule: #D8CFBE;
+  --accent: #2F5D4A;
+  --night: #0C1B24;
+  --night-deep: #070C19;
+  --night-ink: #F3E9D6;
+  --night-muted: #A9B3B0;
+  --night-rule: rgba(243, 233, 214, 0.16);
+  --night-accent: #E9B85C;
+
+  --font-display: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --font-body: 'Instrument Sans Variable', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, monospace;
+
+  --gutter: 20px;
+  --measure: 720px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0C1B24;
+    --ink: #F3E9D6;
+    --muted: #A9B3B0;
+    --rule: rgba(243, 233, 214, 0.16);
+    --accent: #E9B85C;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #0C1B24;
+  --ink: #F3E9D6;
+  --muted: #A9B3B0;
+  --rule: rgba(243, 233, 214, 0.16);
+  --accent: #E9B85C;
+  color-scheme: dark;
+}
+
+/* Sections that are always night, in both themes */
+.on-night {
+  --paper: var(--night);
+  --ink: var(--night-ink);
+  --muted: var(--night-muted);
+  --rule: var(--night-rule);
+  --accent: var(--night-accent);
+  background: var(--paper);
+  color: var(--ink);
+}
+.on-night-deep {
+  --paper: var(--night-deep);
+  --ink: var(--night-ink);
+  --muted: var(--night-muted);
+  --rule: var(--night-rule);
+  --accent: var(--night-accent);
+  background: var(--paper);
+  color: var(--ink);
+}
