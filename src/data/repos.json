@@ -1,0 +1,12 @@
+[
+  { "repo": "alexvcasillas/animated-styled-components" },
+  { "repo": "alexvcasillas/react-mobx-state-tree" },
+  { "repo": "alexvcasillas/react-mobx-router" },
+  { "repo": "alexvcasillas/react-onboarding" },
+  { "repo": "alexvcasillas/react-spring-pop" },
+  { "repo": "alexvcasillas/memory-monitor", "blurb": "Watch memory usage in Node.js and catch leaks early." },
+  { "repo": "alexvcasillas/react-native-loading-dots" },
+  { "repo": "alexvcasillas/curl-runner" },
+  { "repo": "alexvcasillas/cratebox" },
+  { "repo": "alexvcasillas/graphdb" }
+]

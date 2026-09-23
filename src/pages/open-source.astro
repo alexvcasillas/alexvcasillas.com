@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RepoList from '../components/RepoList.astro';
+import { getRepos } from '../lib/repos-build';
+const repos = await getRepos();
+---
+<BaseLayout title="Open source" description="Libraries I keep around, mostly for React and Node." class="on-night">
+  <section class="wrap section">
+    <div class="section-head">
+      <h1 class="h2">Open source</h1>
+      <p class="muted">Libraries I keep around, mostly for React and Node.</p>
+    </div>
+    <div class="list"><RepoList repos={repos} /></div>
+    <a class="link-arrow more" href="https://github.com/alexvcasillas">
+      Everything on GitHub
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </a>
+  </section>
+</BaseLayout>
+
+<style>
+  .list { margin-block: 40px; }
+</style>

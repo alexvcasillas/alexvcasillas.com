@@ -1,0 +1,82 @@
+{
+  "alexvcasillas/animated-styled-components": {
+    "repo": "alexvcasillas/animated-styled-components",
+    "name": "animated-styled-components",
+    "url": "https://github.com/alexvcasillas/animated-styled-components",
+    "description": "React Animated Styled Components",
+    "stars": 137,
+    "language": "JavaScript"
+  },
+  "alexvcasillas/cratebox": {
+    "repo": "alexvcasillas/cratebox",
+    "name": "cratebox",
+    "url": "https://github.com/alexvcasillas/cratebox",
+    "description": "A global, fast content delivery network for NPM",
+    "stars": 19,
+    "language": "TypeScript"
+  },
+  "alexvcasillas/curl-runner": {
+    "repo": "alexvcasillas/curl-runner",
+    "name": "curl-runner",
+    "url": "https://github.com/alexvcasillas/curl-runner",
+    "description": "curl-runner monorepo - CLI tool and documentation",
+    "stars": 13,
+    "language": "TypeScript"
+  },
+  "alexvcasillas/graphdb": {
+    "repo": "alexvcasillas/graphdb",
+    "name": "graphdb",
+    "url": "https://github.com/alexvcasillas/graphdb",
+    "description": "An in-memory database with sync capabilities. Zero runtime dependencies. Bun-first.",
+    "stars": 4,
+    "language": "TypeScript"
+  },
+  "alexvcasillas/memory-monitor": {
+    "repo": "alexvcasillas/memory-monitor",
+    "name": "memory-monitor",
+    "url": "https://github.com/alexvcasillas/memory-monitor",
+    "description": "Watch memory usage in Node.js and catch leaks early.",
+    "stars": 1,
+    "language": "TypeScript"
+  },
+  "alexvcasillas/react-mobx-router": {
+    "repo": "alexvcasillas/react-mobx-router",
+    "name": "react-mobx-router",
+    "url": "https://github.com/alexvcasillas/react-mobx-router",
+    "description": "Create React App with React Router 4 and MobX + Internationalization",
+    "stars": 90,
+    "language": "JavaScript"
+  },
+  "alexvcasillas/react-mobx-state-tree": {
+    "repo": "alexvcasillas/react-mobx-state-tree",
+    "name": "react-mobx-state-tree",
+    "url": "https://github.com/alexvcasillas/react-mobx-state-tree",
+    "description": "Create React App with MobX State Tree, Styled Components and GraphQL",
+    "stars": 129,
+    "language": "JavaScript"
+  },
+  "alexvcasillas/react-native-loading-dots": {
+    "repo": "alexvcasillas/react-native-loading-dots",
+    "name": "react-native-loading-dots",
+    "url": "https://github.com/alexvcasillas/react-native-loading-dots",
+    "description": "A React Native loading component with dots or custom components and a smooth animation",
+    "stars": 27,
+    "language": null
+  },
+  "alexvcasillas/react-onboarding": {
+    "repo": "alexvcasillas/react-onboarding",
+    "name": "react-onboarding",
+    "url": "https://github.com/alexvcasillas/react-onboarding",
+    "description": "Onboarding library for React",
+    "stars": 68,
+    "language": "TypeScript"
+  },
+  "alexvcasillas/react-spring-pop": {
+    "repo": "alexvcasillas/react-spring-pop",
+    "name": "react-spring-pop",
+    "url": "https://github.com/alexvcasillas/react-spring-pop",
+    "description": "Animate React elements when they enter the viewport with physics based animations",
+    "stars": 18,
+    "language": "TypeScript"
+  }
+}
