@@ -78,5 +78,21 @@
     "description": "Animate React elements when they enter the viewport with physics based animations",
     "stars": 18,
     "language": "TypeScript"
+  },
+  "alexvcasillas/tiptap-rusty-parser": {
+    "repo": "alexvcasillas/tiptap-rusty-parser",
+    "name": "tiptap-rusty-parser",
+    "url": "https://github.com/alexvcasillas/tiptap-rusty-parser",
+    "description": "A Tiptap's JSON content parser and manipulator built with Rust",
+    "stars": 1,
+    "language": "Rust"
+  },
+  "ueberdosis/tiptap": {
+    "repo": "ueberdosis/tiptap",
+    "name": "tiptap",
+    "url": "https://github.com/ueberdosis/tiptap",
+    "description": "The headless rich text editor framework for web artisans.",
+    "stars": 38491,
+    "language": "TypeScript"
   }
 }
