@@ -2,22 +2,23 @@
 interface App {
   slug: string; name: string; tagline: string; blurb: string; appStoreUrl: string; siteUrl: string;
   icon: string; screenshot: { src: string; alt: string };
-  colors: { bg: string; text: string; accent: string; frame: string }; order: number;
+  colors: { bg: string; text: string; accent: string; frame: string; muted: string }; order: number;
 }
 interface Props { app: App; index: number }
 const { app, index } = Astro.props;
 const flipped = index % 2 === 1;
-const muted = app.colors.text + 'CC';
+const loading = index === 0 ? 'eager' : 'lazy';
+const fetchpriority = index === 0 ? 'high' : undefined;
 ---
 <section
   class:list={['band', { flipped }]}
-  style={`--band-bg:${app.colors.bg};--band-text:${app.colors.text};--band-accent:${app.colors.accent};--band-frame:${app.colors.frame};--band-muted:${muted}`}
+  style={`--band-bg:${app.colors.bg};--band-text:${app.colors.text};--band-accent:${app.colors.accent};--band-frame:${app.colors.frame};--band-muted:${app.colors.muted}`}
   aria-labelledby={`app-${app.slug}`}
 >
   <div class="wrap grid">
     <div class="copy">
-      <img class="icon" src={app.icon} alt="" width="76" height="76" loading="lazy" />
-      <h3 class="h3" id={`app-${app.slug}`}>{app.name}</h3>
+      <img class="icon" src={app.icon} alt="" width="76" height="76" loading={loading} fetchpriority={fetchpriority} />
+      <h2 class="h3" id={`app-${app.slug}`}>{app.name}</h2>
       <p class="serif tagline italic-light">{app.tagline}</p>
       <p class="blurb">{app.blurb}</p>
       <a class="link-arrow" href={app.appStoreUrl} style="color: var(--band-accent)">
@@ -26,7 +27,7 @@ const muted = app.colors.text + 'CC';
       </a>
     </div>
     <div class="shot">
-      <img src={app.screenshot.src} alt={app.screenshot.alt} width="300" height="650" loading="lazy" />
+      <img src={app.screenshot.src} alt={app.screenshot.alt} width="300" height="650" loading={loading} fetchpriority={fetchpriority} />
     </div>
   </div>
 </section>
@@ -44,6 +45,7 @@ const muted = app.colors.text + 'CC';
     box-shadow: 0 30px 60px rgba(0,0,0,0.25); transform: rotate(-3deg) translateY(24px);
   }
   .flipped .shot img { transform: rotate(3deg) translateY(24px); }
+  .band :focus-visible { outline-color: var(--band-accent); }
   @media (min-width: 900px) {
     .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 80px; align-items: center; padding-block: 88px 0; min-height: 560px; }
     .shot { height: 384px; }

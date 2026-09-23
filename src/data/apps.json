@@ -8,7 +8,7 @@
     "siteUrl": "https://mellow-sudoku.alexvcasillas.dev",
     "icon": "/apps/mellow-sudoku/icon.png",
     "screenshot": { "src": "/apps/mellow-sudoku/screenshot.jpg", "alt": "Mellow Sudoku, an easy puzzle in progress" },
-    "colors": { "bg": "#F7F5ED", "text": "#2F5D4A", "accent": "#2F5D4A", "frame": "#26332E" },
+    "colors": { "bg": "#F7F5ED", "text": "#2F5D4A", "accent": "#2F5D4A", "frame": "#26332E", "muted": "#46605A" },
     "order": 1
   },
   {
@@ -20,7 +20,7 @@
     "siteUrl": "https://pebble-paths.alexvcasillas.dev",
     "icon": "/apps/pebble-paths/icon.png",
     "screenshot": { "src": "/apps/pebble-paths/screenshot.jpg", "alt": "Pebble Paths, garden 13 with a water channel forming" },
-    "colors": { "bg": "#EFE7D6", "text": "#4A4436", "accent": "#4E8F97", "frame": "#3E3A30" },
+    "colors": { "bg": "#EFE7D6", "text": "#4A4436", "accent": "#35666F", "frame": "#3E3A30", "muted": "#5E5848" },
     "order": 2
   },
   {
@@ -32,7 +32,7 @@
     "siteUrl": "https://little-lanterns.alexvcasillas.dev",
     "icon": "/apps/little-lanterns/icon.png",
     "screenshot": { "src": "/apps/little-lanterns/screenshot.jpg", "alt": "Little Lanterns title screen with one lantern glowing" },
-    "colors": { "bg": "#0E2029", "text": "#F3E9D6", "accent": "#E9B85C", "frame": "#1B2B33" },
+    "colors": { "bg": "#0E2029", "text": "#F3E9D6", "accent": "#E9B85C", "frame": "#1B2B33", "muted": "#C9C0AE" },
     "order": 3
   },
   {
@@ -44,7 +44,7 @@
     "siteUrl": "https://pocket-orbit.alexvcasillas.dev",
     "icon": "/apps/pocket-orbit/icon.png",
     "screenshot": { "src": "/apps/pocket-orbit/screenshot.jpg", "alt": "Pocket Orbit, a moon circling a planet before launch" },
-    "colors": { "bg": "#070C19", "text": "#EEE6F2", "accent": "#F2B08A", "frame": "#161B2C" },
+    "colors": { "bg": "#070C19", "text": "#EEE6F2", "accent": "#F2B08A", "frame": "#161B2C", "muted": "#B9B3C4" },
     "order": 4
   }
 ]
